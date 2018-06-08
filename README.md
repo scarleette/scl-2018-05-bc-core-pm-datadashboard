@@ -38,8 +38,7 @@ los cursos, etc, de manera mas rapida, comoda y visualmente mas acogedora.
 
 #### 3) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
  
-    Cabe mencionar que para explicar la funcionalidad de botones y despliegues debes seleccionar 
-    cohort santiago, generacion 2018, y para filtrar la seccion completitud del curso(ascendente y descendente).
+Cabe mencionar que para explicar la funcionalidad de botones y despliegues debes seleccionar cohort santiago, generacion 2018, y para filtrar la seccion completitud del curso(ascendente y descendente).
 
-    Click en este link para ver el prototipo de alta fidelidad.
-    https://marvelapp.com/174h0526/screen/43952975
+Click en el siguiente link para ver el prototipo de alta fidelidad.
+https://marvelapp.com/174h0526/screen/43952975
