@@ -1,30 +1,3 @@
-//  USANDO FETCH!
-function llamando() {
-  const llamar = document.getElementById('callingPage');// creo un div en html
-  llamar.style = 'display: block;';
-  const url = 'https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/';
-  // fetch me entrega una respuesta, un valor que esta en el futuro==> es una promesa
-  fetch(url).then( // then cuando recibo la respuesta, catch cuando carga
-    (response) =>{ 
-      if (response.ok) { // si la respuesta esta okay
-        return response.json(); // este metodo responde con una promesa, es una promesa
-      } // puedo anidar promesas
-    }
-  ).then( // cuando cumplo la promesa 
-    // para hacer multiples llamadas, por ejemplo users, progress, courses, en la url va donde esta ubicada cada una
-    (responseJson) =>{
-      console.log(users);        
-    }
-  ).then(
-    (responseJson) =>{
-      return fetch(responseJson.urldentrodelJson);
-    }
-  ).catch( // cuando la promesa falla
-    (error) => {
-      console.log('Petición fallo');
-    }
-  ); 
-}
 /* users: Arreglo de objetos.
 progress: Objeto de progreso en bruto. Contiene una 
 llave para cada usuario (uid) con un objeto que contiene el progreso del usuario para cada curso.
@@ -94,38 +67,3 @@ const processCohortData = (options) =>{
     orderDirection: String con dirección de ordenado (ver sortUsers).
     search: String de búsqueda (ver filterUsers)*/
 
-/* USANDO FETCH!
-function llamando(){
-const llamar = document.getElementById("llamandoPagina");//creo un div en html o lo creo antes con createElement(div) antes
-llamar.style = "display: block;";
-const url = "url";
-//fetch me entrega una respuesta, un valor que esta en el futuro==> es una promesa
-fetch(url).then( //then cuando recibo la respuesta, catch cuando carga
-    (response) =>{ 
-    if(response.ok){ //si la respuesta esta okay
-        return response.json(); //este metodo responde con una promesa, es una promesa
-    }   //puedo anidar promesas
-}
-).then( //cuando cumplo la promesa 
-    //para hacer multiples llamadas, por ejemplo users, progress, courses, en la url va donde esta ubicada cada una
-    (responseJson) =>{
-        return fetch(responseJson.urldentrodelJson)
-        //acá aplico mi código, lo que quiero que haga la función luego de que recibo
-        //por ejemplo en el código siguiente le digo que ponga los datos en la pantalla           
-        const dogeReceptorDiv = document.getElementById("dogeReceptor");
-        for(let dogeIndex=0; dogeIndex < dogeResponse.length; dogeIndex++){
-            const dogeImg = document.createElement('img'); //Aquí "almaceno" las imágenes
-            dogeImg.src = dogeResponse[dogeIndex];
-            dogeReceptorDiv.appendChild(dogeImg);
-        }
-        }
-).then(
-    (responseJson) =>{
-        return fetch(responseJson.urldentrodelJson)
-    }
-).catch( //cuando la promesa falla
-    (error) => {
-        console.log("Petición fallo")
-    }
-); */
-  

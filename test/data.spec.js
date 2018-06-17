@@ -1,4 +1,4 @@
-describe('data', () =>{
+describe('data', () => {
 
   it('debería exponer función computeUsersStats en objeto global', () => {
     assert.isFunction(computeUsersStats);
@@ -16,7 +16,7 @@ describe('data', () =>{
     assert.isFunction(processCohortData);
   });
 
-  describe('computeUsersStats(users, progress, courses)', () =>{
+  describe('computeUsersStats(users, progress, courses)', () => {
 
     const cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
     const courses = Object.keys(cohort.coursesIndex);

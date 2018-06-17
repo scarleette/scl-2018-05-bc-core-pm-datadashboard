@@ -6,8 +6,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id= "callingPage"></div>
-    <div id= "usersContainer"></div>
+
+      <button onclick="descargarCohorts()">Seleccionar cohorts</button>
+      <div id="loading" style="display:none;">
+          <p>Cargando Cohort</p>
+      </div>
+        <div id="cohortsContainer">
+      </div>
+
+      <div>
+      <div id="usersContainer"></div>
+      </div>
     <script src="main.js"></script>
     <script src="data.js"></script>
 
