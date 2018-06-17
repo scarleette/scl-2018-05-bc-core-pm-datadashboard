@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 describe('data', () =>{
-=======
-describe('data', () => {
->>>>>>> 04a9adbba24aefa148ab85f68426344aa5b8058f
+
   it('debería exponer función computeUsersStats en objeto global', () => {
     assert.isFunction(computeUsersStats);
   });
@@ -19,11 +16,8 @@ describe('data', () => {
     assert.isFunction(processCohortData);
   });
 
-<<<<<<< HEAD
   describe('computeUsersStats(users, progress, courses)', () =>{
-=======
-  describe('computeUsersStats(users, progress, courses)', () => {
->>>>>>> 04a9adbba24aefa148ab85f68426344aa5b8058f
+
     const cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
     const courses = Object.keys(cohort.coursesIndex);
     const { users, progress } = fixtures;
@@ -42,11 +36,8 @@ describe('data', () => {
       });
     });
 
-<<<<<<< HEAD
     describe('user.stats para el primer usuario en data de prueba - ver carpeta data/', () =>{
-=======
-    describe('user.stats para el primer usuario en data de prueba - ver carpeta data/', () => {
->>>>>>> 04a9adbba24aefa148ab85f68426344aa5b8058f
+
       const processed = computeUsersStats(users, progress, courses);
 
       it(
@@ -82,7 +73,7 @@ describe('data', () => {
   });
 
   describe('sortUsers(users, orderBy, orderDirection)', () => {
-<<<<<<< HEAD
+
     const cohort = fixtures.cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
     const courses = Object.keys(cohort.coursesIndex);
     const { users, progress } = fixtures;
@@ -99,10 +90,7 @@ describe('data', () => {
         assert.isAtLeast(sortedUsers[0].name.localeCompare(sortedUsers[1].name), 0);
       }
     });
-=======
-    it('debería retornar arreglo de usuarios ordenado por nombre ASC');
-    it('debería retornar arreglo de usuarios ordenado por nombre DESC');
->>>>>>> 04a9adbba24aefa148ab85f68426344aa5b8058f
+
     it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
     it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
     it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');

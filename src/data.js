@@ -1,11 +1,11 @@
 //llamando al arreglo en el archivo data.js
-/*//creo una variable para alojar la ruta que vamos a solicitar
-const myObject = new Request("./data/cohorts/lim-2018-03-pre-core-pw/users.json");//Hay que escribir un punto para que la ruta sea relativa
+//creo una variable para alojar la ruta que vamos a solicitar
+    const myObject = new Request("./data/cohorts/lim-2018-03-pre-core-pw/users.json");//Hay que escribir un punto para que la ruta sea relativa
 
 fetch(myObject)
 .then((resp) => resp.json()) // Transforma los datos de json
 .then(function(users) {
-    /*ejercicio de objetos
+    ejercicio de objetos
     console.log("Users > "+JSON.stringify(users[0].name));
     users[0] = {
         ...users[0], //Sumar todo lo que contiene user[0]
@@ -14,7 +14,7 @@ fetch(myObject)
         }
     };
   })
-  console.log(myObject)*/
+  console.log(myObject)
 
   /*users: Arreglo de objetos.
   progress: Objeto de progreso en bruto. Contiene una 
@@ -25,7 +25,7 @@ fetch(myObject)
 //queremos obtener todos los datos, users, progress y courses
 //queremos recorrer el arreglo o array de users calculando los indicadores de progreso de cada una.
 //la función debe retornar un nuevo arreglo de usuarios, los objetos de usuario deben llevar la propiedad stats(estadísticas calculadas).
-computeUsersStats(users, progress, courses) => {
+const computeUsersStats = (users, progress, courses) => {
     return //un nuevo arreglo de usuarios, cada usuario tendrá la propiedad stats(estadísticas calculadas)
 }
 
@@ -59,19 +59,19 @@ quizzes: Objeto con cinco propiedades:
             - porcentaje de lecturas completadas */
         /*2. orderDirection ascendente o descendente*/ 
 
-    sortUsers(users, orderBy, orderDirection) => {
+    const sortUsers = (users, orderBy, orderDirection) => {
         return //arreglo de usuarios ordenado
 }
     //función para filtrar estudiantes con un botón o input de search
     //obtener users de computeUsersStats()
     //crear un string de búsqueda, para escoger por estudiante
-    filterUsers(users, search) =>{
+    const filterUsers = (users, search) =>{
         return //nuevo arreglo con los que cumplan la condición de filtrado(string search nombre(name) del usuario)
 }
     //función para seleccionar al cohort
     //debe también dejar cambiar al usuario los criterios de ordenado y filtrado en la interfaz
     //invoca internamente a las demás funciones
-    processCohortData(options) =>{
+    const processCohortData = (options) =>{
         return  //Nuevo arreglo de usuarios ordenado y filtrado con la propiedad stats añadida (ver computeUsersStats)
     }
 
