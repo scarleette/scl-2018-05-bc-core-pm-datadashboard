@@ -3,31 +3,32 @@
 ## Preámbulo
 
   En Laboratoria, las Training Managers (TMs) hacen un gran trabajo al analizar la
-mayor cantidad de datos posibles respecto al progreso de las estudiantes y asi poder
+mayor cantidad de datos posibles respecto al progreso de las estudiantes, así poder
 apoyarlas y contribuir a su aprendizaje.
 
   Para llevar a cabo esta tarea las Training Managers solo cuentan con una planilla  
 en exel en la cual almacenan y ordenan los datos solicitados para posteriormente poder 
 utilizarlos.
+
   A pesar de que la data de progreso del LMS (ej. lecturas leídas, ejercicios
 completados, nota en quizzes, etc.) no impacta directamente la evaluación de
 una estudiante, sí es una pieza de información relevante que las TMs
 quisieran visualizar para tener un mejor entendimiento de cómo va cada
 estudiante en su proceso de aprendizaje.
 
-  Es por esto que iniciamos una investigacion de como podriamos mejorar la experiencia de las
-Training Manager y lo que descubrimos es que les encantaria tener una plataforma que fuese
-de laboratoria que les permitiera ver todos estos datos actualizados y ordenados, ademas de que 
-estuviera integrado en su sesion LMS.
+  Es por esto que iniciamos una investigación de como podríamos mejorar la experiencia de las
+Training Manager, lo que descubrimos es que les encantaría tener una plataforma que fuese
+de Laboratoria, que les permitiera ver todos estos datos actualizados y ordenados, además de que 
+estuviera integrado en su sesión LMS.
 
-  El objetivo de este proyecto es entregarles a las TMs un solucion a su problema por eso
-hemos decidido crear un plataforma que se sencontrara dentro de su sesion de LMS que les permitira 
-acceder a estos datos tales como; porcentajes de lecturas realizadas, quizzes, retos, completitud de
-los cursos, etc, de manera mas rapida, comoda y visualmente mas acogedora.
+  El objetivo de este proyecto es entregarles a las TMs un solución a su problema, por eso
+hemos decidido crear una plataforma que se encontrará dentro de su sesión de LMS, que les permitirá 
+acceder a estos datos tales como; porcentajes de lecturas realizados, quizzes, retos, completitud de
+los cursos, etc, de manera más rápida, comoda y visualmente más acogedora.
 
 ## Proceso de creación
 
-  Para llevar a cabo graficamente este proyecto es que creamos modelos de interfaz de baja y alta
+  Para llevar a cabo graficamente este proyecto creamos modelos de interfaz de baja y alta
   fidelidad.
 
 #### 2) Sketch de la solución (prototipo de baja fidelidad)
@@ -38,7 +39,7 @@ los cursos, etc, de manera mas rapida, comoda y visualmente mas acogedora.
 
 #### 3) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
  
-Cabe mencionar que para explicar la funcionalidad de botones y despliegues debes seleccionar cohort santiago, generacion 2018, y para filtrar la seccion completitud del curso(ascendente y descendente).
+Cabe mencionar que para explicar la funcionalidad de botones y despliegues debes seleccionar cohort Santiago, generación 2018, para filtrar la sección completitud del curso(ascendente y descendente).
 
 Click en el siguiente link para ver el prototipo de alta fidelidad.
 https://marvelapp.com/174h0526/screen/43952975
