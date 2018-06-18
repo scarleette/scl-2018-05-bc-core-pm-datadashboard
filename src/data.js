@@ -1,3 +1,54 @@
+//  USANDO FETCH!
+let dataContainer = {};
+function callingCohorts() {
+  // fetch me entrega una respuesta, un valor que esta en el futuro==> es una promesa
+  fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json')
+    .then( // then cuando recibo la respuesta, catch cuando carga
+      (response) =>{ 
+        return response.json();
+      }
+    ).then( // cuando cumplo la promesa 
+      (usersElement) =>{
+        // el contenedor de datos con los usuarios (users) y 
+        dataContainer.users = usersElement;
+        console.log(dataContainer.users);
+      }
+    ).then(  
+      fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
+        .then( // then cuando recibo la respuesta, catch cuando carga
+          (responseTwo) =>{ 
+            return responseTwo.json();
+          }
+        ).then( // cuando cumplo la promesa 
+          (progressElement) =>{
+            dataContainer.progress = progressElement;
+            console.log(dataContainer.progress);   
+          }
+        ).catch( // cuando la promesa falla
+          (error) => {
+            console.log('Petición falló');
+          }
+        ).then(
+          fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
+            .then( // then cuando recibo la respuesta, catch cuando carga
+              (responseThree) =>{ 
+                return responseThree.json();
+              }
+            ).then( // cuando cumplo la promesa 
+              (cohortsElement) =>{
+                dataContainer.cohorts = cohortsElement;
+                console.log(dataContainer.cohorts);
+              }
+            ).catch( // cuando la promesa falla
+              (error) => {
+                console.log('Petición falló');
+              }
+            )
+        ) 
+    ); 
+}
+
+
 /* users: Arreglo de objetos.
 progress: Objeto de progreso en bruto. Contiene una 
 llave para cada usuario (uid) con un objeto que contiene el progreso del usuario para cada curso.
