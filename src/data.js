@@ -1,25 +1,28 @@
 //  USANDO FETCH!
+// contenedor de los datos
 let dataContainer = {};
+// función para hacer click y obtener los datos en consola
 function callingCohorts() {
   // fetch me entrega una respuesta, un valor que esta en el futuro==> es una promesa
   fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json')
     .then( // then cuando recibo la respuesta, catch cuando carga
       (response) =>{ 
+        // retorno la respuesta del fetch en forma de JSON
         return response.json();
       }
     ).then( // cuando cumplo la promesa 
       (usersElement) =>{
-        // el contenedor de datos con los usuarios (users) y 
+        // el contenedor de datos con los usuarios (users) y la igualo al elemento de la función para luego acceder a ella.
         dataContainer.users = usersElement;
         console.log(dataContainer.users);
       }
     ).then(  
       fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
-        .then( // then cuando recibo la respuesta, catch cuando carga
+        .then( 
           (responseTwo) =>{ 
             return responseTwo.json();
           }
-        ).then( // cuando cumplo la promesa 
+        ).then( 
           (progressElement) =>{
             dataContainer.progress = progressElement;
             console.log(dataContainer.progress);   
@@ -30,16 +33,16 @@ function callingCohorts() {
           }
         ).then(
           fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
-            .then( // then cuando recibo la respuesta, catch cuando carga
+            .then( 
               (responseThree) =>{ 
                 return responseThree.json();
               }
-            ).then( // cuando cumplo la promesa 
+            ).then( 
               (cohortsElement) =>{
                 dataContainer.cohorts = cohortsElement;
                 console.log(dataContainer.cohorts);
               }
-            ).catch( // cuando la promesa falla
+            ).catch( 
               (error) => {
                 console.log('Petición falló');
               }
