@@ -1,56 +1,35 @@
-//  USANDO FETCH!
-// contenedor de los datos
-let dataContainer = {};
-// función para hacer click y obtener los datos en consola
-function callingCohorts() {
-  // fetch me entrega una respuesta, un valor que esta en el futuro==> es una promesa
-  fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json')
-    .then( // then cuando recibo la respuesta, catch cuando carga
-      (response) =>{ 
-        // retorno la respuesta del fetch en forma de JSON
-        return response.json();
-      }
-    ).then( // cuando cumplo la promesa 
-      (usersElement) =>{
-        // el contenedor de datos con los usuarios (users) y la igualo al elemento de la función para luego acceder a ella.
-        dataContainer.users = usersElement;
-        console.log(dataContainer.users);
-      }
-    ).then(  
-      fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
-        .then( 
-          (responseTwo) =>{ 
-            return responseTwo.json();
-          }
-        ).then( 
-          (progressElement) =>{
-            dataContainer.progress = progressElement;
-            console.log(dataContainer.progress);   
-          }
-        ).catch( // cuando la promesa falla
-          (error) => {
-            console.log('Petición falló');
-          }
-        ).then(
-          fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
-            .then( 
-              (responseThree) =>{ 
-                return responseThree.json();
-              }
-            ).then( 
-              (cohortsElement) =>{
-                dataContainer.cohorts = cohortsElement;
-                console.log(dataContainer.cohorts);
-              }
-            ).catch( 
-              (error) => {
-                console.log('Petición falló');
-              }
-            )
-        ) 
-    ); 
-}
-
+// creo variables de los Url
+let usersUrl = 'https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json';
+let progressUrl = 'https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json';
+let cohortsUrl = 'https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json';
+// contenedor del data
+let dataContainer = {} ; 
+fetch(usersUrl)
+  .then(response => response.json())
+  .then(usersElement =>{
+    dataContainer.users = usersElement;
+    console.log(dataContainer.users);
+  }).then(  
+    fetch(progressUrl)
+      .then(responseTwo => responseTwo.json()
+      ).then( 
+        (progressElement) =>{
+          dataContainer.progress = progressElement;
+          console.log(dataContainer.progress);   
+        }).then(
+        fetch(cohortsUrl)
+          .then(responseThree =>responseThree.json())
+          .then( 
+            (cohortsElement) =>{
+              dataContainer.cohorts = cohortsElement;
+              console.log(dataContainer.cohorts);
+            }).catch( 
+            (error) => {
+              console.log('Petición falló');
+            }
+          )
+      ) 
+  ); 
 
 /* users: Arreglo de objetos.
 progress: Objeto de progreso en bruto. Contiene una 
@@ -110,8 +89,6 @@ const filterUsers = (users, search) =>{
 const processCohortData = (options) =>{
   return; // Nuevo arreglo de usuarios ordenado y filtrado con la propiedad stats añadida (ver computeUsersStats)
 };
-
-
 /* options: objeto con las siguientes llaves:
     cohort: Objeto cohort (de la lista de cohorts)
     cohortData: Objeto con dos propiedades:
