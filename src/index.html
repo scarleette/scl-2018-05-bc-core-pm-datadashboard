@@ -11,33 +11,34 @@
   <body>
     <header>
       <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h1>DataDashboard</h1>
-          </div>
+        <div class="col-12 text-center">
+          <h1>DataDashboard</h1>
         </div>
       </div>
     </header>
     <section>
-      <div class="container-fluid " id = "porcentajes">
+      <div class="container" id = "porcentajes">
         <div class="row">
-          <div class="col-1" id="circulo">17 %</div>
-          <div class="col-1" id="circulo1">45 %</div>
-          <div class="col-1" id="circulo2">1 %</div>
-          <div class="col-1" id="circulo3">89 %</div>
-          <div class="col-1" id="circuloUno"></div>
-          <div class="col-1" id="circuloDos"></div>
-          <div class="col-1" id="circuloTres"></div>
-          <div class="col-1" id="circuloCuatro"></div>
-       </div>
+          <div class="col-3">
+            <div id="circulo"></div>
+          </div>
+          <div class="col-3">
+            <div id="circulo"></div>
+          </div>
+          <div class="col-3">
+            <div id="circulo"></div>
+          </div>
+          <div class="col-3">
+            <div id="circulo"></div>
+          </div>
+        </div>
       </div>
     </section>
-    <section>
+    <section class="container">
       <div  class="selector-pais">
         <div class="row">
           <div class="col-4">
-              <select class="custom-select">
-                <option selected>Open this select menu</option>
+              <select class="custom-select"id="buscador1">
                 <option selected>Open this select menu</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
@@ -46,10 +47,12 @@
           </div>
         </div>
       </div><br>
+    </section>
+    <section class="container">
       <div  class="selector-cohorts">
           <div class="row">
             <div class="col-4">
-                <select class="custom-select">
+                <select class="custom-select"id="buscador2">
                   <option selected>Open this select menu</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
@@ -59,7 +62,14 @@
           </div>
         </div>
     </section><br>
-    <section>
+    <form class="container">
+        <div class="form-row">
+          <div class="col-4">
+            <input type="text" class="form-control" placeholder="First name">
+          </div>
+        </div>
+    </form>
+    <section class="container">
     <table class="table">
       <thead>
         <tr>
@@ -83,15 +93,6 @@
       </tbody>
       </table>
     </section>
-
-      <button>user</button>
-      <div id="root"></div>
-      
-      <button>progress</button>
-      <div id="rootTwo"></div>
-
-      <button>cohorts</button>
-      <div id="rootThree"></div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

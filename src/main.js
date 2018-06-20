@@ -4,7 +4,7 @@ const container = document.getElementById('root');
 const btnTwo = document.querySelectorAll('button')[1];
 const containerTwo = document.getElementById('rootTwo');
 
-const btnThree = document.querySelectorAll('button')[2];
+const btnThree = document.querySelectorAll('custom-select');
 const containerThree = document.getElementById('rootThree');
 
 // Función para pintar usuarios en el html como texto
@@ -35,8 +35,8 @@ const renderProgress = dataProgress => {
 const renderCohorts = dataCohorts => {
   btnThree.addEventListener('click', () => {
     const showCohorts = dataCohorts.forEach(elements => {
-      return containerThree.innerHTML += `<p>${elements.id}</p>`;
+      return containerThree.innerHTML += `<option>${showCohorts}</option>`;
     });
-    return showCohorts;
-  });
+    
+  })
 };

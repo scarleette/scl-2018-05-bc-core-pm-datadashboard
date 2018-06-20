@@ -3,15 +3,13 @@ header {
     height: 150px;
     
 }
-.col-1 {
+#circulo {
     height: 100px;
     width: 100px;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    background: #FF009E;
-    transform: translate(40em, 5em);   
+    background: #FF009E; 
     margin: 20px;
-    text-align: center;
-    
-  }
+}
+

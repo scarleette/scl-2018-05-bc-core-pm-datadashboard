@@ -34,9 +34,3 @@ filterUsers = (users, search) =>{
 processCohortData = (options) =>{
   return; 
 };
-
-
-
- 
-
- 
