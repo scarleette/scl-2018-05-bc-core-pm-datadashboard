@@ -7,16 +7,20 @@ const containerTwo = document.getElementById('rootTwo');
 const btnThree = document.querySelectorAll('button')[2];
 const containerThree = document.getElementById('rootThree');
 
-
+// Función para pintar usuarios en el html como texto
 const renderUsers = dataUsers => {
+  // escucho el evento click 
   btn.addEventListener('click', () => {
+    // recorro la data de usuarios
     const showUsers = dataUsers.forEach(element => {
+      // retorno la data con el objeto nombre en el container en html 
       return container.innerHTML += `<p>${element.name}</p>`;
     });
     return showUsers;
   });
 };
 
+// Función para pintar el progreso en el html como texto
 const renderProgress = dataProgress => {
   btnTwo.addEventListener('click', () => {
     Object.entries(dataProgress).forEach(([key, value]) => {
@@ -26,6 +30,8 @@ const renderProgress = dataProgress => {
     });
   }); 
 };
+
+// Función para pintar Cohorts en el html como texto
 const renderCohorts = dataCohorts => {
   btnThree.addEventListener('click', () => {
     const showCohorts = dataCohorts.forEach(elements => {
