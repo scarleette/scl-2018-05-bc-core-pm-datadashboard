@@ -27,7 +27,6 @@ fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/coho
           )
       ) 
   );
-
 const renderUsers = usersElement => {
   btn.addEventListener('click', () => {
     const render = usersElement.forEach(element => {
@@ -73,3 +72,7 @@ processCohortData = (options) =>{
 };
 
 
+
+ 
+
+ 
