@@ -32,4 +32,3 @@ sortUsers = (users, orderBy, orderDirection) => {
 
 filterUsers = (users, search) =>{
   return; 
-};

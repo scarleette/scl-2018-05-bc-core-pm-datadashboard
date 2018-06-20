@@ -23,6 +23,19 @@ const renderProgress = dataProgress => {
     // Object.entries(dataProgress).forEach(([key, value]) => {
     const map = new Map(Object.entries(dataProgress));
     // en vez de showprogress podemos usar  
+      return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
+    });
+  }); 
+};
+
+// Función para pintar Cohorts en el html como texto
+const renderCohorts = dataCohorts => {
+  btnThree.addEventListener('click', () => {
+    const showCohorts = dataCohorts.forEach(elements => {
+      return containerThree.innerHTML += `<option>${showCohorts}</option>`;
+    });
+    
+  })
     // return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
     console.log(map);      
   });
