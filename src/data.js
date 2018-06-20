@@ -28,12 +28,12 @@ fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/coho
       ) 
   );
 
-const renderUsers = usersElement => {
+const renderUsers = dataUsers => {
   btn.addEventListener('click', () => {
-    const render = usersElement.forEach(element => {
+    const showUsers = dataUsers.forEach(element => {
       return container.innerHTML += `<p>${element.name}</p>`;
     });
-    return render;
+    return showUsers;
   });
 };
 
