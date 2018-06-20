@@ -1,4 +1,3 @@
-// contenedor del data
 fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json')
   .then(response => response.json())
   .then(dataUsers => renderUsers(dataUsers)

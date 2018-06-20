@@ -14,7 +14,7 @@ const renderUsers = dataUsers => {
       return container.innerHTML += `<p>${element.name}</p>`;
     });
     return showUsers;
-});
+  });
 };
 
 const renderProgress = dataProgress => {
@@ -24,7 +24,7 @@ const renderProgress = dataProgress => {
     // en vez de showprogress podemos usar  
       return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
     });
-}); 
+  }); 
 };
 const renderCohorts = dataCohorts => {
   btnThree.addEventListener('click', () => {
@@ -32,5 +32,5 @@ const renderCohorts = dataCohorts => {
       return containerThree.innerHTML += `<p>${elements.id}</p>`;
     });
     return showCohorts;
-});
+  });
 };
