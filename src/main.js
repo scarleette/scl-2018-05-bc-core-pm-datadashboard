@@ -23,25 +23,35 @@ const renderProgress = dataProgress => {
     // Object.entries(dataProgress).forEach(([key, value]) => {
     const map = new Map(Object.entries(dataProgress));
     // en vez de showprogress podemos usar  
-    // return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
-    console.log(map);      
-  });
-}; 
+    return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
+  }); 
+};
 
-let cajaLista = document.getElementById('locality-dropdown');// me dirigo al elemento seleccionado
-cajaLista.length = 0;// limpio cualquier opcion en el elemento
- 
-let defaultOption = document.createElement('option');// anexo la opcion determinada
-defaultOption.text = 'Escoge el cohort';
+// Función para pintar Cohorts en el html como texto
+const renderCohorts = dataCohorts => {
+  btnThree.addEventListener('click', () => {
+    const showCohorts = dataCohorts.forEach(elements => {
+      return containerThree.innerHTML += `<option>${showCohorts}</option>`;
+      // return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
+      console.log(map);      
+    });
+  }); 
 
-cajaLista.add(defaultOption);// .add agrega un nuevo elemento con un valor especificado al final de un objeto
-cajaLista.selectedIndex = 0;
+  let cajaLista = document.getElementById('locality-dropdown');// me dirigo al elemento seleccionado
+  cajaLista.length = 0;// limpio cualquier opcion en el elemento
+  
+  let defaultOption = document.createElement('option');// anexo la opcion determinada
+  defaultOption.text = 'Escoge el cohort';
 
-const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
-  let optionCohort = dataCohorts;
-  for (let i = 0; i < dataCohorts.length; i++) {
-    optionCohort = document.createElement('option');
-    optionCohort.text = dataCohorts[i].id;
-    cajaLista.add(optionCohort);
-  }
+  cajaLista.add(defaultOption);// .add agrega un nuevo elemento con un valor especificado al final de un objeto
+  cajaLista.selectedIndex = 0;
+
+  const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
+    let optionCohort = dataCohorts;
+    for (let i = 0; i < dataCohorts.length; i++) {
+      optionCohort = document.createElement('option');
+      optionCohort.text = dataCohorts[i].id;
+      cajaLista.add(optionCohort);
+    }
+  };
 };
