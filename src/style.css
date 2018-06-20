@@ -1,0 +1,17 @@
+header {
+    background-color: #FFE521;
+    height: 150px;
+    
+}
+.col-1 {
+    height: 100px;
+    width: 100px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #FF009E;
+    transform: translate(40em, 5em);   
+    margin: 20px;
+    text-align: center;
+    
+  }
