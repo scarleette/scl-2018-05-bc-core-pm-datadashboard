@@ -4,6 +4,7 @@ const container = document.getElementById('root');
 const btnTwo = document.querySelectorAll('button')[1];
 const containerTwo = document.getElementById('rootTwo');
 
+
 // Función para pintar usuarios en el html como texto
 const renderUsers = dataUsers => {
   // escucho el evento click 
