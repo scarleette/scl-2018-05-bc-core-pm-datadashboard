@@ -1,3 +1,8 @@
+
+// 'https://scarleette.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json'
+//'https://scarleette.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json'
+//'https://scarleette.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json'
+
 const btn = document.querySelectorAll('button')[0];
 const container = document.getElementById('root');
 
@@ -122,4 +127,5 @@ processCohortData = (options) =>{
     orderBy: String con criterio de ordenado (ver sortUsers).
     orderDirection: String con dirección de ordenado (ver sortUsers).
     search: String de búsqueda (ver filterUsers)*/
+
 
