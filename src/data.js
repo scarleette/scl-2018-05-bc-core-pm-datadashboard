@@ -7,21 +7,17 @@ const containerTwo = document.getElementById('rootTwo');
 const btnThree = document.querySelectorAll('button')[2];
 const containerThree = document.getElementById('rootThree');
 
-// creo variables de los Url
-let usersUrl = 'https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json';
-let progressUrl = 'https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json';
-let cohortsUrl = 'https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json';
 // contenedor del data
-fetch(usersUrl)
+fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json')
   .then(response => response.json())
   .then(dataUsers => renderUsers(dataUsers)
   ).then(  
-    fetch(progressUrl)
+    fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
       .then(responseTwo => responseTwo.json()
       ).then( 
         (dataProgress) =>renderProgress(dataProgress)          
       ).then(
-        fetch(cohortsUrl)
+        fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json')
           .then(responseThree => responseThree.json())
           .then( 
             (dataCohorts) => renderCohorts(dataCohorts)
@@ -44,11 +40,12 @@ const renderUsers = usersElement => {
 
 const renderProgress = dataProgress => {
   btnTwo.addEventListener('click', () => {
-    // otra forma de recorrer que solo me da el key y value primero const showProgress = Object.entries(dataProgress).forEach(([key, value]) => {
-    const map = new Map(Object.entries(dataProgress));
-    // containerTwo.innerHTML += `<p>${dataProgress.map}</p>`;
-    return map;
-  });
+    Object.entries(dataProgress).forEach(([key, value]) => {
+      // otra forma con const map = new Map(Object.entries(dataProgress));
+      // en vez de showprogress podemos usar  
+      return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
+    });
+  }); 
 };
 const renderCohorts = dataCohorts => {
   btnThree.addEventListener('click', () => {
