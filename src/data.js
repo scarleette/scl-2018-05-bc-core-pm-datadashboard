@@ -9,8 +9,7 @@ fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/coho
       ).then(
         fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json')
           .then(responseThree => responseThree.json())
-          .then( 
-            (dataCohorts) => renderCohorts(dataCohorts)
+          .then((dataCohorts) => renderCohorts(dataCohorts)
           ).catch( 
             (error) => {
               console.log('Petición falló');
@@ -18,6 +17,10 @@ fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/coho
           )
       ) 
   );
+
+processCohortData = (options) =>{
+  return; 
+};
 
 computeUsersStats = (users, progress, courses) => {
   return; 
@@ -30,9 +33,3 @@ sortUsers = (users, orderBy, orderDirection) => {
 filterUsers = (users, search) =>{
   return; 
 };
-
-processCohortData = (options) =>{
-  return; 
-};
-
-
