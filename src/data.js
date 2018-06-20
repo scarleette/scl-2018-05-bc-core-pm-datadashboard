@@ -1,8 +1,3 @@
-
-// 'https://scarleette.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json'
-//'https://scarleette.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json'
-//'https://scarleette.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json'
-
 const btn = document.querySelectorAll('button')[0];
 const container = document.getElementById('root');
 
@@ -34,12 +29,12 @@ fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/coho
       ) 
   );
 
-const renderUsers = usersElement => {
+const renderUsers = dataUsers => {
   btn.addEventListener('click', () => {
-    const render = usersElement.forEach(element => {
+    const showUsers = dataUsers.forEach(element => {
       return container.innerHTML += `<p>${element.name}</p>`;
     });
-    return render;
+    return showUsers;
   });
 };
 
