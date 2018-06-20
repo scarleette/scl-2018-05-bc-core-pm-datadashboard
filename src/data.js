@@ -1,35 +1,63 @@
+const btn = document.querySelectorAll('button')[0];
+const container = document.getElementById('root');
+
+const btnTwo = document.querySelectorAll('button')[1];
+const containerTwo = document.getElementById('rootTwo');
+
+const btnThree = document.querySelectorAll('button')[2];
+const containerThree = document.getElementById('rootThree');
+
 // creo variables de los Url
 let usersUrl = 'https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json';
 let progressUrl = 'https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json';
 let cohortsUrl = 'https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json';
 // contenedor del data
-let dataContainer = {} ; 
 fetch(usersUrl)
   .then(response => response.json())
-  .then(usersElement =>{
-    dataContainer.users = usersElement;
-    console.log(dataContainer.users);
-  }).then(  
+  .then(dataUsers => renderUsers(dataUsers)
+  ).then(  
     fetch(progressUrl)
       .then(responseTwo => responseTwo.json()
       ).then( 
-        (progressElement) =>{
-          dataContainer.progress = progressElement;
-          console.log(dataContainer.progress);   
-        }).then(
+        (dataProgress) =>renderProgress(dataProgress)          
+      ).then(
         fetch(cohortsUrl)
-          .then(responseThree =>responseThree.json())
+          .then(responseThree => responseThree.json())
           .then( 
-            (cohortsElement) =>{
-              dataContainer.cohorts = cohortsElement;
-              console.log(dataContainer.cohorts);
-            }).catch( 
+            (dataCohorts) => renderCohorts(dataCohorts)
+          ).catch( 
             (error) => {
               console.log('Petición falló');
             }
           )
       ) 
-  ); 
+  );
+
+const renderUsers = usersElement => {
+  btn.addEventListener('click', () => {
+    const render = usersElement.forEach(element => {
+      return container.innerHTML += `<p>${element.name}</p>`;
+    });
+    return render;
+  });
+};
+
+const renderProgress = dataProgress => {
+  btnTwo.addEventListener('click', () => {
+    // otra forma de recorrer que solo me da el key y value primero const showProgress = Object.entries(dataProgress).forEach(([key, value]) => {
+    const map = new Map(Object.entries(dataProgress));
+    // containerTwo.innerHTML += `<p>${dataProgress.map}</p>`;
+    return map;
+  });
+};
+const renderCohorts = dataCohorts => {
+  btnThree.addEventListener('click', () => {
+    const showCohorts = dataCohorts.forEach(elements => {
+      return containerThree.innerHTML += `<p>${elements.id}</p>`;
+    });
+    return showCohorts;
+  });
+};
 
 /* users: Arreglo de objetos.
 progress: Objeto de progreso en bruto. Contiene una 
@@ -40,7 +68,7 @@ Esta data se puede extraer de la propiedad coursesIndex de los objetos que repre
 // queremos obtener todos los datos, users, progress y courses
 // queremos recorrer el arreglo o array de users calculando los indicadores de progreso de cada una.
 // la función debe retornar un nuevo arreglo de usuarios, los objetos de usuario deben llevar la propiedad stats(estadísticas calculadas).
-const computeUsersStats = (users, progress, courses) => {
+computeUsersStats = (users, progress, courses) => {
   return; // un nuevo arreglo de usuarios, cada usuario tendrá la propiedad stats(estadísticas calculadas)
 };
 
@@ -74,19 +102,19 @@ quizzes: Objeto con cinco propiedades:
             - porcentaje de lecturas completadas */
 /* 2. orderDirection ascendente o descendente*/ 
 
-const sortUsers = (users, orderBy, orderDirection) => {
+sortUsers = (users, orderBy, orderDirection) => {
   return; // arreglo de usuarios ordenado
 };
 // función para filtrar estudiantes con un botón o input de search
 // obtener users de computeUsersStats()
 // crear un string de búsqueda, para escoger por estudiante
-const filterUsers = (users, search) =>{
+filterUsers = (users, search) =>{
   return; // nuevo arreglo con los que cumplan la condición de filtrado(string search nombre(name) del usuario)
 };
 // función para seleccionar al cohort
 // debe también dejar cambiar al usuario los criterios de ordenado y filtrado en la interfaz
 // invoca internamente a las demás funciones
-const processCohortData = (options) =>{
+processCohortData = (options) =>{
   return; // Nuevo arreglo de usuarios ordenado y filtrado con la propiedad stats añadida (ver computeUsersStats)
 };
 /* options: objeto con las siguientes llaves:
