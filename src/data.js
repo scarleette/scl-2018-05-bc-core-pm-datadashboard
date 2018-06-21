@@ -13,8 +13,8 @@ fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/coho
       .then(responseTwo => responseTwo.json()
       ).then( 
         (dataProgress) => {
-          progress = dataProgress;       
-          renderProgress(dataProgress);  
+          progress = dataProgress;
+          renderProgress(dataProgress);      
         }
       ).then(
         fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json')
