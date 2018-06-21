@@ -4,7 +4,6 @@ const container = document.getElementById('root');
 const btnTwo = document.querySelectorAll('button')[1];
 const containerTwo = document.getElementById('rootTwo');
 
-
 // Función para pintar usuarios en el html como texto
 const renderUsers = dataUsers => {
   // escucho el evento click 
@@ -28,6 +27,7 @@ const renderProgress = dataProgress => {
     console.log(map);      
   });
 }; 
+
 
 let cajaLista = document.getElementById('locality-dropdown');// me dirigo al elemento seleccionado
 cajaLista.length = 0;// limpio cualquier opcion en el elemento
