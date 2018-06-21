@@ -27,31 +27,27 @@ const renderProgress = dataProgress => {
   }); 
 };
 
-// Función para pintar Cohorts en el html como texto
-const renderCohorts = dataCohorts => {
-  btnThree.addEventListener('click', () => {
-    const showCohorts = dataCohorts.forEach(elements => {
-      return containerThree.innerHTML += `<option>${showCohorts}</option>`;
-      // return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
-      console.log(map);      
-    });
-  }); 
+let cajaLista = document.getElementById('locality-dropdown');// me dirigo al elemento seleccionado
+cajaLista.length = 0;// limpio cualquier opcion en el elemento
 
-  let cajaLista = document.getElementById('locality-dropdown');// me dirigo al elemento seleccionado
-  cajaLista.length = 0;// limpio cualquier opcion en el elemento
-  
-  let defaultOption = document.createElement('option');// anexo la opcion determinada
-  defaultOption.text = 'Escoge el cohort';
+let defaultOption = document.createElement('option');// anexo la opcion determinada
+defaultOption.text = 'Escoge el cohort';
 
-  cajaLista.add(defaultOption);// .add agrega un nuevo elemento con un valor especificado al final de un objeto
-  cajaLista.selectedIndex = 0;
+cajaLista.add(defaultOption);// .add agrega un nuevo elemento con un valor especificado al final de un objeto
+cajaLista.selectedIndex = 0;
 
-  const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
-    let optionCohort = dataCohorts;
-    for (let i = 0; i < dataCohorts.length; i++) {
-      optionCohort = document.createElement('option');
-      optionCohort.text = dataCohorts[i].id;
-      cajaLista.add(optionCohort);
-    }
-  };
+seleccionarCohort = () => {
+  let seleccionarValor = document.getElementById('locality-dropdown').value;
+  console.log(seleccionarCohort()); 
 };
+
+const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
+  let optionCohort = dataCohorts;
+  for (let i = 0; i < dataCohorts.length; i++) {
+    optionCohort = document.createElement('option');
+    optionCohort.text = dataCohorts[i].id;
+    cajaLista.add(optionCohort);
+  }
+};
+
+
