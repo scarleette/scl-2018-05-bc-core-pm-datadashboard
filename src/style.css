@@ -1,28 +1,17 @@
 header {
     background-color: #FFE521;
-    height: 100px;
-}
-#lab {
-    width: 300px;
-    background-color: white;
-    border-right-color: #333333;
-    border-right-style: solid;
-    display: block;
-    flex-direction: column;
-    height: 800px;
-    position: static;
-
-}
-#circulosPosicion{
-    display: inline-block;
+    padding: 2%
 }
 .circulo {
     height: 100px;
     width: 100px;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
     background: #FF009E; 
     margin: 20px;
     text-align: center;
+}
+.aside{
+    border-right: 1px solid #333333;
+}
+.space{
+    padding: 40% 0;
 }
