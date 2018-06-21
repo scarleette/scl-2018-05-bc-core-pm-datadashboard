@@ -30,4 +30,20 @@ const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el htm
   }
 };
 
+let datosTabla = document.getElementById('tablaContenido');
+function tabla(dataUsers) {
+  datosTabla.innerHTML = '';
+  
+  for (let valor of dataUsers) {
+    datosTabla.innerHTML += `
+      <tr>
+        <th scope="row">1</th>
+        <td>${valor.name}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr> `
+  }
+}
 
