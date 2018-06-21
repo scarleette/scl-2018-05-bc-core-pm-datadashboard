@@ -1,15 +1,25 @@
 header {
+    padding: 2%;
+}
+.bg-lab{
     background-color: #FFE521;
-    height: 150px;
-    
 }
 .circulo {
     height: 100px;
     width: 100px;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
     background: #FF009E; 
     margin: 20px;
     text-align: center;
+}
+.aside{
+    border-right: 1px solid #333333;
+}
+.space{
+    padding: 20% 0;
+}
+.circle{
+    padding: 20px;
+}
+.form-row{
+    padding: 20px;
 }
