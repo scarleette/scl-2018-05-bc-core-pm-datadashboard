@@ -23,20 +23,23 @@ const renderProgress = dataProgress => {
     // Object.entries(dataProgress).forEach(([key, value]) => {
     const map = new Map(Object.entries(dataProgress));
     // en vez de showprogress podemos usar  
-    // return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
-    console.log(map);      
-  });
-}; 
-
+    return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
+  }); 
+};
 
 let cajaLista = document.getElementById('locality-dropdown');// me dirigo al elemento seleccionado
 cajaLista.length = 0;// limpio cualquier opcion en el elemento
- 
+
 let defaultOption = document.createElement('option');// anexo la opcion determinada
 defaultOption.text = 'Escoge el cohort';
 
 cajaLista.add(defaultOption);// .add agrega un nuevo elemento con un valor especificado al final de un objeto
 cajaLista.selectedIndex = 0;
+
+seleccionarCohort = () => {
+  let seleccionarValor = document.getElementById('locality-dropdown').value;
+  console.log(seleccionarCohort()); 
+};
 
 const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
   let optionCohort = dataCohorts;
@@ -46,3 +49,5 @@ const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el htm
     cajaLista.add(optionCohort);
   }
 };
+
+
