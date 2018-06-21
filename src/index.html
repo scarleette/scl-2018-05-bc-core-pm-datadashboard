@@ -11,50 +11,56 @@
   <body>
    <header>
       <div class="container">
+        <div class="row">
         <div class="col-12 text-center">
           <h1>DataDashboard</h1>
         </div>
+        </div>
       </div>
     </header>
-    <section>
-      <div class="container" id = "porcentajes">
-        <div class="row">
-          <div class="col-3">
-            <div class="circulo"></div>
+    <main>
+        <nav id="lab">
+          <div class="container">
+            <div class="row">
+              <div class="col-4">
+                <select id="locality-dropdown" name="locality" class="custom-select"></select>
+              </div>
+            </div><br>
+            <form>
+                <div class="form-row">
+                    <input type="text" class="form-control" placeholder="First name">
+                  </div>
+            </form><br>
           </div>
-          <div class="col-3">
-            <div class="circulo"></div>
-          </div>
-          <div class="col-3">
-            <div class="circulo"></div>
-          </div>
-          <div class="col-3">
-            <div class="circulo"></div>
+        </nav>
+      </main>
+    <section id="circulosPosicion">
+      <div class="container">
+        <div id = "porcentajes">
+          <div class="row">
+            <div class="col-3">
+              <div class="circulo"></div>
+            </div>
+            <div class="col-3">
+              <div class="circulo"></div>
+            </div>
+            <div class="col-3">
+              <div class="circulo"></div>
+            </div>
+            <div class="col-3">
+              <div class="circulo"></div>
+            </div>
           </div>
         </div>
-      </div>
+     </div>
     </section>
-    <section class="container">
-        <div class="row">
-          <div class="col-4">
-            <select id="locality-dropdown" name="locality"class="custom-select"></select>
-          </div>
-        </div><br>
-    </section>
-    <form class="container">
-        <div class="form-row">
-          <div class="col-4">
-            <input type="text" class="form-control" placeholder="First name">
-          </div>
-        </div>
-    </form><br>
     <section class="container">
     <table class="table">
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">nombre</th>
-          <th scope="col">Completitud /n General</th>
+          <th scope="col">Completitud General</th>
           <th scope="col">Ejercicios</th>
           <th scope="col">Lecturas</th>
           <th scope="col">Quizzes</th>
