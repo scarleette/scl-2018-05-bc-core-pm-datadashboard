@@ -8,7 +8,7 @@ cajaLista.add(defaultOption);// .add agrega un nuevo elemento con un valor espec
 cajaLista.selectedIndex = 0;
 
 const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
-  let optionCohort = dataCohorts;
+  let optionCohort;
   for (let i = 0; i < dataCohorts.length; i++) {
     optionCohort = document.createElement('option');
     optionCohort.text = dataCohorts[i].id;
