@@ -1,7 +1,20 @@
 header {
     background-color: #FFE521;
-    height: 150px;
-    
+    height: 100px;
+}
+#lab {
+    width: 300px;
+    background-color: white;
+    border-right-color: #333333;
+    border-right-style: solid;
+    display: block;
+    flex-direction: column;
+    height: 800px;
+    position: static;
+
+}
+#circulosPosicion{
+    display: inline-block;
 }
 .circulo {
     height: 100px;
