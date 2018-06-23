@@ -24,10 +24,15 @@
         <div class="row">
           <div class="col-3 aside">
             <div class="space">
-              <select id="locality-dropdown" name="locality" class="custom-select"></select>
+              <select id="locality-dropdown" name="locality" class="custom-select" onchange="seleccionarCohort()"></select>
+              <option value=""></option>
               <form>
                 <div class="form-row">
-                  <input type="text" class="form-control" placeholder="First name">
+                    <form id= "search-form">
+                        <label for= "search-keyword" class= "visuallyhidden"></label>
+                        <input id= "search-keyword" type= "text" name= "search-keyword" placeholder= "Buscador de estudiante" required>
+                        <input id= "submit-btn" type= "submit" value= "Submit">
+                    </form>
                 </div>
               </form>
             </div>
@@ -48,7 +53,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 table-responsive{-sm|-md|-lg|-xl}">
                 <table class="table">
                   <thead>
                     <tr>
