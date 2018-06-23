@@ -1,34 +1,14 @@
-// Función para pintar el progreso en el html como texto
-const renderProgress = dataProgress => {
-  btnTwo.addEventListener('click', () => {
-    // Object.entries(dataProgress).forEach(([key, value]) => {
-    const map = new Map(Object.entries(dataProgress));
-    // en vez de showprogress podemos usar  
-    return containerTwo.innerHTML += `<p>${key}: ${value}</p>`;
-  }); 
-};
+/* const form = document.getElementById('search-form');
+const searchStudent = document.getElementById('search-keyword');
+const responseContainer = document.getElementById('response-container');
+let searchedForStudent;
 
-let cajaLista = document.getElementById('locality-dropdown');// me dirigo al elemento seleccionado
-cajaLista.length = 0;// limpio cualquier opcion en el elemento
-
-let defaultOption = document.createElement('option');// anexo la opcion determinada
-defaultOption.text = 'Escoge el cohort';
-
-cajaLista.add(defaultOption);// .add agrega un nuevo elemento con un valor especificado al final de un objeto
-cajaLista.selectedIndex = 0;
-
-seleccionarCohort = () => {
-  document.getElementById('locality-dropdown').selectedIndex = '0';
-};
-
-const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
-  let optionCohort;
-  for (let i = 0; i < dataCohorts.length; i++) {
-    optionCohort = document.createElement('option');
-    optionCohort.text = dataCohorts[i].id;
-    cajaLista.add(optionCohort);
-  }
-};
+form.addEventListener('submit', (element) => {
+  element.preventDefault();
+  datosTabla.innerHTML = '';
+  searchedForStudent = searchStudent.value;
+  tabla(dataUsers);
+}); */
 
 let datosTabla = document.getElementById('tablaContenido');
 function tabla(dataUsers) {
@@ -43,7 +23,30 @@ function tabla(dataUsers) {
         <td></td>
         <td></td>
         <td></td>
-      </tr> `
+      </tr> `;
   }
 }
 
+// Función para pintar el progreso en el html como texto
+renderProgress = dataProgress => {
+  const map = new Map(Object.entries(dataProgress));  
+  console.log(map);      
+};
+
+let cajaLista = document.getElementById('locality-dropdown');// me dirigo al elemento seleccionado
+cajaLista.length = 0;// limpio cualquier opcion en el elemento
+
+let defaultOption = document.createElement('option');// anexo la opcion determinada
+defaultOption.text = 'Escoge el cohort';
+
+cajaLista.add(defaultOption);// .add agrega un nuevo elemento con un valor especificado al final de un objeto
+cajaLista.selectedIndex = 0;
+
+window.renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
+  let optionCohort;
+  for (let i = 0; i < dataCohorts.length; i++) {
+    optionCohort = document.createElement('option');
+    optionCohort.text = dataCohorts[i].id;
+    cajaLista.add(optionCohort);
+  }
+};
