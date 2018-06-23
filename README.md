@@ -29,7 +29,9 @@ los cursos, etc, de manera más rápida, comoda y visualmente más acogedora.
 ## Proceso de creación
 
   Para llevar a cabo graficamente este proyecto creamos modelos de interfaz de baja y alta
-  fidelidad.
+  fidelidad. 
+
+  La estructura base fue un referente para nuestra interfaz, en el desarrollo del proyecto le dimos prioridad a lo que queríamos y podíamos mostrar. Trabajaremos en llegar a hacer la interfaz más cercana a nuestro prototipo y mejorarla para una mejor experiencia de usuario.
 
 #### 2) Sketch de la solución (prototipo de baja fidelidad)
 
@@ -41,5 +43,5 @@ los cursos, etc, de manera más rápida, comoda y visualmente más acogedora.
  
 Cabe mencionar que para explicar la funcionalidad de botones y despliegues debes seleccionar cohort Santiago, generación 2018, para filtrar la sección completitud del curso(ascendente y descendente).
 
-Click en el siguiente link para ver el prototipo de alta fidelidad.
+Click en el siguiente link para ver el prototipo de alta fidelidad web.
 https://marvelapp.com/174h0526/screen/43952975
