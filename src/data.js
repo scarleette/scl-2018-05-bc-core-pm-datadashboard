@@ -5,7 +5,7 @@ window.onload = () => {
     .then(response => response.json()) 
     .then(dataUsers => {
       users = dataUsers;
-      tabla(dataUsers);
+      tabla(users);
     }
     ).then(  
       fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
@@ -13,7 +13,7 @@ window.onload = () => {
         ).then( 
           (dataProgress) => {
             progress = dataProgress;
-            renderProgress(dataProgress);          
+            // renderProgress(dataProgress);          
           }
         ).then(
           fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json')
@@ -31,10 +31,6 @@ window.onload = () => {
     );
 };
 
-processCohortData = (options) =>{
-  return; 
-};
-
 computeUsersStats = (users, progress, courses) => {
 };
 
@@ -42,6 +38,13 @@ sortUsers = (users, orderBy, orderDirection) => {
   return; 
 };
 
-filterUsers = (users, search) =>{
+window.filterUsers = (users, search) => { // filtrar usuarios
+  return users.filter(users => {
+    return users.name.toUpperCase().indexOf(search.toUpperCase()) > -1; 
+  });
+};
+// console.log(JSON.stringify(window.filterUsers(series, 'friends')));, probado en ejercicio de series, aún no funciona acá
+  
+processCohortData = (options) =>{
   return; 
 };
