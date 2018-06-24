@@ -7,7 +7,9 @@ defaultOption.text = 'Escoge el cohort';
 cajaLista.add(defaultOption);// .add agrega un nuevo elemento con un valor especificado al final de un objeto
 cajaLista.selectedIndex = 0;
 
-window.renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
+const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
+
+  window.renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
   let optionCohort;
   for (let i = 0; i < dataCohorts.length; i++) {
     optionCohort = document.createElement('option');
@@ -17,6 +19,22 @@ window.renderCohorts = dataCohorts => { // Función para pintar Cohorts en el ht
 };
 
 let datosTabla = document.getElementById('tablaContenido');
+function tabla(dataUsers) {
+  datosTabla.innerHTML = '';
+  
+  dataUsers.forEach((alumna) => {
+    datosTabla.innerHTML += `
+      <tr>
+        <th scope="row"></th>
+        <td>${alumna.name}</td>
+        <td>${alumna.stats.percent}%</td>
+        <td>${alumna.stats.exercices.percent}%</td>
+        <td>${alumna.stats.reads.percent}%</td>
+        <td>${alumna.stats.quizzes.percent}%</td>
+      </tr>`;
+  });
+}
+  
 function tabla(users) {
   datosTabla.innerHTML = '';
   
