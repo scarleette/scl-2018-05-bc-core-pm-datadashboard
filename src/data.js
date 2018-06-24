@@ -1,23 +1,18 @@
-let users = [];
-let progress = {};
-let cohorts = [];
-            
 window.onload = () => {
   dataJson();
 }; dataJson = () => {
   fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json') // llamando a la data 
-    .then(response => response.json()) 
+    .then(response => response.json()) // primera promesa, esperando llamada para dar ok
     .then(dataUsers => {
       users = dataUsers;
-      tabla(users);
+      tabla(dataUsers);  
     }
     ).then(  
       fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
         .then(responseTwo => responseTwo.json()
         ).then( 
           (dataProgress) => {
-            progress = dataProgress;
-            // renderProgress(dataProgress);          
+            progress = dataProgress;       
           }
         ).then(
           fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json')
@@ -26,10 +21,15 @@ window.onload = () => {
               cohorts = dataCohorts;
               renderCohorts(dataCohorts);
             }
-          )
-      ) 
-  );
-
+            ).catch( 
+              (error) => {
+                console.log('Petición falló');
+              }
+            )
+        ) 
+    );
+};
+  
 
 function computeUsersStats(dataAlumnas, dataProgress ) {
   for (let i = 0; i < dataAlumnas.length; ++i) {
@@ -126,16 +126,6 @@ function devuelveLasLecturas(progresoDeUsuario) {
   resultadoDeLecturas.reads.percent = porcentajeDeLecturasCompletadas;
   // console.log(resultadoDeLecturas);
   return resultadoDeLecturas;
-            ).catch( 
-              (error) => {
-                console.log('Petición falló');
-              }
-            )
-        ) 
-    );
-};
-
-computeUsersStats = (users, progress, courses) => {
 };
 
 function devuelveInformacionDeQuizzes(progresoDeUsuario){
@@ -199,4 +189,4 @@ window.filterUsers = (users, search) => { // filtrar usuarios
   
 processCohortData = (options) =>{
   return; 
-};
+}; 
