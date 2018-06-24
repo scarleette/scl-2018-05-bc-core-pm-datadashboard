@@ -45,3 +45,10 @@ Cabe mencionar que para explicar la funcionalidad de botones y despliegues debes
 
 Click en el siguiente link para ver el prototipo de alta fidelidad web.
 https://marvelapp.com/174h0526/screen/43952975
+
+#### 4) Planificación
+
+Planificamos las tareas en:
+
+* [Trello]
+(https://trello.com/b/34wrBF5P/datadashboard)
