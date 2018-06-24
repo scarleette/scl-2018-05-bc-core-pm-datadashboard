@@ -1,8 +1,6 @@
 window.onload = () => {
   dataJson();
-}; 
-
-dataJson = () => {
+}; dataJson = () => {
   fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json') // llamando a la data 
     .then((response) => {
       response.json()
