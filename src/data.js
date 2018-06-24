@@ -8,17 +8,24 @@ dataJson = () => {
       response.json()
         .then(dataUsers => {
           fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')      
-            .then((response) => {
-              response.json()
-                .then(progress => {
-                  const dataComputed = computeUsersStats(dataUsers, progress);
-                  tabla(dataComputed);
-                })
+            .then((response) => response.json())
+            .then(progress => {
+              fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json')
+              .then((response) => response.json())
+              .then((dataCohorts) => {
+                cohorts = dataCohorts;
+                renderCohorts(dataCohorts);
+                const dataComputed = computeUsersStats(dataUsers, progress);
+                tabla(dataComputed)      
+              })
+              .catch((error) => {
+                console.log('Petición falló', error);
+              })
             })
         });
     })
     .catch((error) => {
-      console.log('Petición falló');
+      console.log('Petición falló', error);
     })
 };
 
