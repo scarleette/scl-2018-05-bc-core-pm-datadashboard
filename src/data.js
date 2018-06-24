@@ -1,32 +1,30 @@
 let users = [];
 let progress = {};
 let cohorts = [];
-
-fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json') // llamando a la data 
-  .then(response => response.json()) // primera promesa, esperando llamada para dar ok
-  .then(dataUsers => {
-    users = dataUsers;
-  }
-  ).then(  
-    fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
-      .then(responseTwo => responseTwo.json()
-      ).then( 
-        (dataProgress) => {
-          progress = dataProgress;
-          // renderProgress(dataProgress);      
-          const dataUsersProcessed = computeUsersStats(users, progress);
-          tabla(dataUsersProcessed);
-        }
-      ).then(
-        fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json')
-          .then(responseThree => responseThree.json())
-          .then((dataCohorts) => {
-            cohorts = dataCohorts;
-            renderCohorts(dataCohorts);
+            
+window.onload = () => {
+  dataJson();
+}; dataJson = () => {
+  fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json') // llamando a la data 
+    .then(response => response.json()) 
+    .then(dataUsers => {
+      users = dataUsers;
+      tabla(users);
+    }
+    ).then(  
+      fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')
+        .then(responseTwo => responseTwo.json()
+        ).then( 
+          (dataProgress) => {
+            progress = dataProgress;
+            // renderProgress(dataProgress);          
           }
-          ).catch( 
-            (error) => {
-              console.log('Petición falló');
+        ).then(
+          fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json')
+            .then(responseThree => responseThree.json())
+            .then((dataCohorts) => {
+              cohorts = dataCohorts;
+              renderCohorts(dataCohorts);
             }
           )
       ) 
@@ -128,6 +126,16 @@ function devuelveLasLecturas(progresoDeUsuario) {
   resultadoDeLecturas.reads.percent = porcentajeDeLecturasCompletadas;
   // console.log(resultadoDeLecturas);
   return resultadoDeLecturas;
+            ).catch( 
+              (error) => {
+                console.log('Petición falló');
+              }
+            )
+        ) 
+    );
+};
+
+computeUsersStats = (users, progress, courses) => {
 };
 
 function devuelveInformacionDeQuizzes(progresoDeUsuario){
@@ -182,3 +190,13 @@ function devuelveInformacionDeQuizzes(progresoDeUsuario){
  return resultadoDeQuizzes;
 };
 
+window.filterUsers = (users, search) => { // filtrar usuarios
+  return users.filter(users => {
+    return users.name.toUpperCase().indexOf(search.toUpperCase()) > -1; 
+  });
+};
+// console.log(JSON.stringify(window.filterUsers(series, 'friends')));, probado en ejercicio de series, aún no funciona acá
+  
+processCohortData = (options) =>{
+  return; 
+};

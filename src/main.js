@@ -8,6 +8,8 @@ cajaLista.add(defaultOption);// .add agrega un nuevo elemento con un valor espec
 cajaLista.selectedIndex = 0;
 
 const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
+
+  window.renderCohorts = dataCohorts => { // Función para pintar Cohorts en el html DOM
   let optionCohort;
   for (let i = 0; i < dataCohorts.length; i++) {
     optionCohort = document.createElement('option');
@@ -17,7 +19,6 @@ const renderCohorts = dataCohorts => { // Función para pintar Cohorts en el htm
 };
 
 let datosTabla = document.getElementById('tablaContenido');
-
 function tabla(dataUsers) {
   datosTabla.innerHTML = '';
   
@@ -32,4 +33,20 @@ function tabla(dataUsers) {
         <td>${alumna.stats.quizzes.percent}%</td>
       </tr>`;
   });
+}
+  
+function tabla(users) {
+  datosTabla.innerHTML = '';
+  
+  for (let valor of users) {
+    datosTabla.innerHTML += `
+      <tr>
+        <th scope="row">1</th>
+        <td>${valor.name}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr> `;
+  }
 }
