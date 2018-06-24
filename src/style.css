@@ -4,6 +4,9 @@ header {
 .bg-lab{
     background-color: #FFE521;
 }
+h1{
+    text-align: center;
+}
 .circulo {
     height: 100px;
     width: 100px;
@@ -23,3 +26,4 @@ header {
 .form-row{
     padding: 20px;
 }
+
