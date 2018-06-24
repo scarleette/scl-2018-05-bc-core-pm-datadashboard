@@ -32,19 +32,3 @@ function tabla(users) {
       </tr>`;
   });
 }
-  
-function tabla(users) {
-  datosTabla.innerHTML = '';
-  
-  for (let valor of users) {
-    datosTabla.innerHTML += `
-      <tr>
-        <th scope="row">1</th>
-        <td>${valor.name}</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr> `;
-  }
-}
