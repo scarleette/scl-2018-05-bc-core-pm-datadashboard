@@ -1,31 +1,18 @@
-window.onload = () => {
-  dataJson();
-}; dataJson = () => {
-  fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/users.json') // llamando a la data 
-    .then((response) => {
-      response.json()
-        .then(dataUsers => {
-          fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts/lim-2018-03-pre-core-pw/progress.json')      
-            .then((response) => response.json())
-            .then(progress => {
-              fetch('https://natichan.github.io/scl-2018-05-bc-core-pm-datadashboard/data/cohorts.json')
-              .then((response) => response.json())
-              .then((dataCohorts) => {
-                cohorts = dataCohorts;
-                renderCohorts(dataCohorts);
-                const dataComputed = computeUsersStats(dataUsers, progress);
-                tabla(dataComputed)      
-              })
-              .catch((error) => {
-                console.log('Petición falló', error);
-              })
-            })
-        });
-    })
-    .catch((error) => {
-      console.log('Petición falló', error);
-    })
+const data = async () => {
+  let response = await fetch('../data/cohorts.json');
+  let cohorts = await response.json();
+  // console.log(cohorts1);
+
+  let response1 = await fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json');
+  let dataProgress = await response1.json();
+  // console.log(dataProgress);
+  
+  let response2 = await fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json');
+  let dataAlumnas = await response2.json();
+  //  console.log(dataAlumnas);
+  computeUsersStats(dataAlumnas, dataProgress, cohorts);
 };
+data();
 
 function computeUsersStats(dataAlumnas, dataProgress ) {
   for (let i = 0; i < dataAlumnas.length; ++i) {
